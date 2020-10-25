@@ -18,7 +18,7 @@ const httpOptions = {
   providedIn: "root",
 })
 export class BeerService {
-  beersUrl: string = "http://ontariobeerapi.ca/beers/";
+  beersUrl: string = "http://localhost:4200/beers/";
 
   constructor(private http: HttpClient) {}
 

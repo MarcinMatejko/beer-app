@@ -1,11 +1,9 @@
 
 {
-  "/api": {
-    "target": "http://ontariobeerapi.ca/beers/",
-    "secure": true,
-    "pathRewrite": {
-    "^/app/": ""
-  },
+  "/beers": {
+    "target": "http://ontariobeerapi.ca/",
+    "secure": false,
+    "logLevel": "debug" ,
     "changeOrigin": true
   }
 }
