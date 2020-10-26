@@ -1,6 +1,12 @@
-Nazewka
-<ul *ngFor="let beer of beers">
-  Nazwa
-  <li>Nazwa piwa: {{ beer.name }}</li>
-  <li>Typ Piwa: {{ beer.type }}</li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Select a Brewer</button>
+        <button class="btn btn-outline-primary" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem *ngFor="let brewer of uniqueBrewers">{{ brewer }}</button>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

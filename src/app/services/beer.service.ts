@@ -11,9 +11,14 @@ import { Observable } from "rxjs";
 export class BeerService {
   beersUrl: string = "http://localhost:4200/beers/";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getBeers(): Observable<Beer[]> {
     return this.http.get<Beer[]>(this.beersUrl);
   }
+
+
+
+
 }

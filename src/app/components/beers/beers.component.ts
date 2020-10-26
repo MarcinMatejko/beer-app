@@ -10,12 +10,21 @@ import { Beer } from "../../models/Beer";
 })
 export class BeersComponent implements OnInit {
   beers: Beer[];
+  uniqueBrewers: String[];
 
   constructor(private beerService: BeerService) {}
 
   ngOnInit(): void {
     this.beerService.getBeers().subscribe((beers) => {
       this.beers = beers;
+
+    const uniqueBrewers = Array.from(new Set(this.beers.map(a => a.brewer)))
+      .map(brewer => {
+        return this.beers.find(a => a.brewer === brewer)
+      }).map((beer) => beer.brewer
+      )
+
+      this.uniqueBrewers = uniqueBrewers
     });
   }
 }
