@@ -11,7 +11,7 @@ import { Beer } from "../../models/Beer";
 export class BeersComponent implements OnInit {
   beers: Beer[];
   uniqueBrewers: String[];
-  selectedBrewer;
+  brewerBeers: Beer[];
 
 
   constructor(private beerService: BeerService) {}
@@ -27,18 +27,18 @@ export class BeersComponent implements OnInit {
       )
 
       this.uniqueBrewers = uniqueBrewers
-
-
-
-      // const selectedBrewer = this.beers.filter(beer => beer.brewer === this.selectBrewer);
-    // console.log(selectedBrewer)
     });
-
 
   }
 
   selectBrewer(e) {
-    console.log(e.target.innerHTML)
+    let selectedBrewer = e.target.innerHTML
+    console.log(selectedBrewer)
+    let brewerBeers = this.beers.filter(beer => beer.brewer === selectedBrewer);
+
+    console.log(brewerBeers)
+    this.brewerBeers = brewerBeers
   }
+
 
 }
