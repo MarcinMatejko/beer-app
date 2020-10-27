@@ -33,12 +33,11 @@ export class BeersComponent implements OnInit {
 
   selectBrewer(e) {
     let selectedBrewer = e.target.innerHTML
-    console.log(selectedBrewer)
     let brewerBeers = this.beers.filter(beer => beer.brewer === selectedBrewer);
 
-    console.log(brewerBeers)
+    brewerBeers.sort((a, b) => a.name.localeCompare(b.name))
+
     this.brewerBeers = brewerBeers
   }
-
 
 }
