@@ -9,21 +9,21 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="card m-3"  *ngFor="let beer of brewerBeers">
-  <div class="card-header">
-    <div class="card-title font-weight-bold"> {{ beer.name }}</div>
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-9">
-        <div class="card-text">Type: {{ beer.type }}</div>
-        <div class="card-text">Price: {{ beer.price }}</div>
+  <div class="card my-3"  *ngFor="let beer of brewerBeers">
+    <div class="card-header">
+      <div class="card-title font-weight-bold"> {{ beer.name }}</div>
     </div>
-    <div class="col-3">
-      <img class="card-img-right rounded-circle border border-dark ml-3" style="width: 40px" src="{{beer.image_url}}" alt="Beer image">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-9">
+          <div class="card-text">Type: {{ beer.type }}</div>
+          <div class="card-text">Price: {{ beer.price }}</div>
+      </div>
+      <div class="col-3">
+        <img (click)="showImage($event)" class="card-img-right rounded-circle border border-dark" style="width: 40px" src="{{beer.image_url}}" alt="Beer image">
+      </div>
     </div>
-   </div>
+    </div>
   </div>
 </div>

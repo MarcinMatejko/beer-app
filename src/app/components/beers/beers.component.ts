@@ -13,8 +13,6 @@ export class BeersComponent implements OnInit {
   uniqueBrewers: String[];
   brewerBeers: Beer[];
   slicedBeers: Beer[];
-  secondSlicedBeers: Beer[];
-
 
   constructor(private beerService: BeerService) {}
 
@@ -37,13 +35,18 @@ export class BeersComponent implements OnInit {
     let selectedBrewer = e.target.innerHTML
     let brewerBeers = this.beers.filter(beer => beer.brewer === selectedBrewer);
 
+    // Sort beers alphabetically
     brewerBeers.sort((a, b) => a.name.localeCompare(b.name))
 
+    // Show only 15 first beers
     this.slicedBeers = brewerBeers.slice(0, 15);
 
-    console.log(this.slicedBeers)
-
     this.brewerBeers = this.slicedBeers
+  }
+
+  // Get the clicked image url
+  showImage(e) {
+    console.log(e.target.currentSrc)
   }
 
 }
