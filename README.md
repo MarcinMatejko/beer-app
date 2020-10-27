@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
+# To run this app
+Clone this repository into Your machine, open terminal, and run this command
+`cd 'beer-app'`
+
+then install the packages and dependencies.
+`npm install`
+
+and then you can run the project by running this code.
+`npm start` - it's importand according to proxy.
+
+Navigate to `http://localhost:4200/`.
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
