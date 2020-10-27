@@ -12,6 +12,8 @@ export class BeersComponent implements OnInit {
   beers: Beer[];
   uniqueBrewers: String[];
   brewerBeers: Beer[];
+  slicedBeers: Beer[];
+  secondSlicedBeers: Beer[];
 
 
   constructor(private beerService: BeerService) {}
@@ -37,7 +39,11 @@ export class BeersComponent implements OnInit {
 
     brewerBeers.sort((a, b) => a.name.localeCompare(b.name))
 
-    this.brewerBeers = brewerBeers
+    this.slicedBeers = brewerBeers.slice(0, 15);
+
+    console.log(this.slicedBeers)
+
+    this.brewerBeers = this.slicedBeers
   }
 
 }
